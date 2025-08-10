@@ -1,0 +1,31 @@
+{
+  "open_1_3": [
+    "sounds/open_1_3/open1.mp3",
+    "sounds/open_1_3/open1b.wav"
+  ],
+  "open_4_6": [
+    "sounds/open_4_6/open46.mp3"
+  ],
+  "open_7_8": [
+    "sounds/open_7_8/open78.ogg"
+  ],
+  "flag": [
+    "sounds/flag/flag1.mp3",
+    "sounds/flag/flag2.mp3"
+  ],
+  "unflag": [
+    "sounds/unflag/unflag1.mp3"
+  ],
+  "open_bomb": [
+    "sounds/open_bomb/boom_short.wav"
+  ],
+  "lose": [
+    "sounds/lose/defeat_sting.mp3"
+  ],
+  "win": [
+    "sounds/win/victory_jingle.mp3"
+  ],
+  "ambient": [
+    "sounds/ambient/loop1.mp3"
+  ]
+}
