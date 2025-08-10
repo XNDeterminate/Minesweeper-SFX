@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manifest Generator</title>
+  <style>
+    body{font:14px system-ui,Segoe UI,Roboto;margin:24px}
+    textarea{width:100%;height:260px}
+    .muted{color:#666}
+    .row{margin:10px 0}
+  </style>
+</head>
+<body>
+  <h1>Generate manifest.json</h1>
+  <p class="muted">Pick your <strong>sounds/</strong> folder (with subfolders named by event). This runs locally in your browser.</p>
+  <div class="row"><input type="file" id="picker" webkitdirectory directory multiple></div>
+  <div class="row"><button id="go">Build manifest</button></div>
+  <div class="row"><textarea id="out" placeholder="manifest.json will appear here..."></textarea></div>
+  <script>
+    let files=[];
+    document.getElementById('picker').addEventListener('change', e=>{ files=[...e.target.files]; });
+    document.getElementById('go').addEventListener('click', ()=>{
+      const manifest={};
+      for(const f of files){
+        const p = f.webkitRelativePath || f.name;
+        if(!p.startsWith('sounds/')) continue;
+        // sounds/<event>/<filename>
+        const parts = p.split('/');
+        if(parts.length < 3) continue;
+        const event = parts[1];
+        const fname = parts.slice(2).join('/');
+        if(!manifest[event]) manifest[event]=[];
+        // In GitHub Pages the file will be at this relative URL:
+        const url = `sounds/${event}/${fname}`;
+        // Filter only audio extensions
+        if(/\.(mp3|wav|ogg)$/i.test(url)) manifest[event].push(url);
+      }
+      // Sort for stability
+      for(const k of Object.keys(manifest)) manifest[k].sort();
+      document.getElementById('out').value = JSON.stringify(manifest, null, 2);
+    });
+  </script>
+</body>
+</html>
