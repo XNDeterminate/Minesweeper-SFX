@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minesweeper SFX Library</title>
+  <style>
+    :root{--bg:#0f1115;--panel:#161920;--ink:#e6e7ea;--muted:#9aa3ad;--grid:#2a2f3a}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font:14px system-ui,Segoe UI,Roboto}
+    .wrap{max-width:1000px;margin:32px auto;padding:0 16px}
+    h1{font-size:20px;margin:0 0 12px}
+    .card{background:var(--panel);border-radius:14px;padding:16px}
+    table{width:100%;border-collapse:collapse}
+    th,td{border-bottom:1px solid var(--grid);padding:8px;vertical-align:middle}
+    th{text-align:left;color:var(--muted);font-weight:500}
+    audio{width:220px}
+    code{background:#0b0f17;padding:2px 6px;border-radius:6px;border:1px solid #1e2635}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Minesweeper SFX Library</h1>
+    <div class="card">
+      <p>All sounds listed below are loaded from <code>manifest.json</code>. Click ▶ to preview. Copy any link for use in code.</p>
+      <table id="tbl">
+        <thead>
+          <tr><th>Event</th><th>Preview</th><th>Direct link</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    async function load(){
+      const res = await fetch('manifest.json');
+      if(!res.ok){
+        document.querySelector('#tbl tbody').innerHTML = `<tr><td colspan="3">Upload and fill <code>manifest.json</code> first.</td></tr>`;
+        return;
+      }
+      const manifest = await res.json();
+      const tbody = document.querySelector('#tbl tbody');
+      tbody.innerHTML = '';
+      for(const [event, files] of Object.entries(manifest)){
+        if(!Array.isArray(files) || !files.length) continue;
+        files.forEach((url, i)=>{
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td>${i===0?`<strong>${event}</strong>`:''}</td>
+            <td><audio controls src="${url}"></audio></td>
+            <td><a href="${url}" target="_blank"><code>${url}</code></a></td>`;
+          tbody.appendChild(tr);
+        });
+      }
+    }
+    load();
+  </script>
+</body>
+</html>
