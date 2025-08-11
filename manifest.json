@@ -1,31 +1,47 @@
 {
-  "open_1_3": [
-    "sounds/open_1_3/open1.mp3",
-    "sounds/open_1_3/open1b.wav"
-  ],
-  "open_4_6": [
-    "sounds/open_4_6/open46.mp3"
-  ],
-  "open_7_8": [
-    "sounds/open_7_8/open78.ogg"
-  ],
-  "flag": [
-    "sounds/flag/flag1.mp3",
-    "sounds/flag/flag2.mp3"
+  "win": [
+    "sounds/win/combined_win_with_extreme_ambient.mp3"
   ],
   "unflag": [
-    "sounds/unflag/unflag1.mp3"
+    "sounds/unflag/Amethyst Step 10.mp3",
+    "sounds/unflag/Amethyst Step 13.mp3",
+    "sounds/unflag/Amethyst Step 2.mp3",
+    "sounds/unflag/Amethyst Step 7.mp3"
   ],
   "open_bomb": [
-    "sounds/open_bomb/boom_short.wav"
+    "sounds/open_bomb/explosion-glass-breaking.mp3",
+    "sounds/open_bomb/metal-pipe-earrape (1).mp3"
+  ],
+  "open_7_8": [
+    "sounds/open_7_8/anvil-minecraft.mp3"
+  ],
+  "open_4_6": [
+    "sounds/open_4_6/Chain_break1.ogg.mp3",
+    "sounds/open_4_6/Chain_break2.ogg.mp3",
+    "sounds/open_4_6/Chain_break3.ogg.mp3",
+    "sounds/open_4_6/Chain_break4.ogg.mp3"
+  ],
+  "open_1_3": [
+    "sounds/open_1_3/Deepslate_break1.ogg.mp3",
+    "sounds/open_1_3/Deepslate_break2.ogg.mp3",
+    "sounds/open_1_3/Deepslate_break3.ogg.mp3",
+    "sounds/open_1_3/Deepslate_break4.ogg.mp3"
   ],
   "lose": [
-    "sounds/lose/defeat_sting.mp3"
+    "sounds/lose/00002a5b_1fMpsyA.mp3",
+    "sounds/lose/steven-he-failure-multi.mp3"
   ],
-  "win": [
-    "sounds/win/victory_jingle.mp3"
+  "flag": [
+    "sounds/flag/Amethyst Cluster Place 1.mp3",
+    "sounds/flag/Amethyst Cluster Place 2.mp3",
+    "sounds/flag/Amethyst Cluster Place 3.mp3",
+    "sounds/flag/Amethyst Cluster Place 4.mp3"
   ],
   "ambient": [
-    "sounds/ambient/loop1.mp3"
+    "sounds/ambient/03 - Subwoofer Lullaby.mp3",
+    "sounds/ambient/08 - Minecraft.mp3",
+    "sounds/ambient/13 - Wet Hands.mp3",
+    "sounds/ambient/18 - Sweden.mp3",
+    "sounds/ambient/19 - Cat.mp3"
   ]
 }
